@@ -357,7 +357,7 @@ def _get_handle(path_or_buf, mode, encoding=None, compression=None,
         # ZIP Compression
         elif compression == 'zip':
             import zipfile
-            zip_file = zipfile.ZipFile(path_or_buf)
+            zip_file = zipfile.ZipFile(path_or_buf, mode)
             zip_names = zip_file.namelist()
             if len(zip_names) == 1:
                 f = zip_file.open(zip_names.pop())
